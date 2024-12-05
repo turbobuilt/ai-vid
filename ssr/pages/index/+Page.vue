@@ -1,3 +1,6 @@
+<script lang="ts" setup>
+
+</script>
 <template>
     <div class="home">
         <h1>The Easiest Course to Learn AI</h1>
@@ -13,6 +16,9 @@
             <li>You will become excellet at using Numpy, which is very similar to Pytorch, but some people don't know as much about Pytorch.</li>
             <li>You will have fun. These videos make learning more fun than anything you've ever learned. Not because they are "just awesome". It's because they are so dense, you will be done before you are bored, and have insanely valuable skills. <b>These videos are worth tens of thousands of dollars. After watching them you will be able to command a high salary just because you watched them (if you had reasonably good understanding, that is).</b></li>
         </ul>
+        <br>
+        <button class="buy-button">Invest Immediately In Your Future</button>
+        <br>
         <h3>How to Learn AI In The Modern Day</h3>
         <div>AI is all the rage, but most people don't know how to start learning it.  You could spend 6 months searching YouTube and other sites but still never learn what you need to know.  You see YouTube is designed by content creators to keep you coming back. This course is the opposite.  It's designed so you never have to come back (or if you do, you can just rewatch the same video - which is a good idea!)  The bottom line is this course is designed to be everything you need to get good at AI.  It's insanely high value, and is just 3 or 4 hours long so you don't have to waste your time. <b><i>I worked hard to get this video series down to just 3 hours so you can have fun and become an expert faster than anybody you have ever met.  Don't be decieved by courses that offer 500 hours of content.  If it was useful content, it wouldn't be so cheap!  This is 3 hours of the most important content on planet earth right now, perfectly condensed so it's easy to understand.  This is the best $50 you'll ever spend!</i></b></div>
         <div>For just $1 you can get the first course.  It's designed to be so simple anyone, even someone with NO COMPUTER EXPERIENCE can understand.  It explains how AI works so that when you do the next two videos, they will be much easier.  AI is not easy.  It's taken thousands of years for us to figure out how AI works.  But with it, the world is changing.  MAKE SURE TO PAY CLOSE ATTENTION TO THE FIRST VIDEO BECAUSE EVERYTHING IN IT IS NECESSARY FOR THE SECOND!</div>
@@ -27,7 +33,15 @@
         <div>With the skills you learn in these videos, you will be so valuable to the world <i>money cannot adequately describe how valuable you will be!</i>  People don't get this, but money doesn't buy living forever.  No amount of money can get you there <i>because nobody understands DNA good enough.</i>  Money can only buy what someone else can give, and if nobody has the tech to fix DNA problems <i>everybody dies!</i>  With this tech, the hope is that starving kids in Africa will be fed by machines that farm for them.  And the goal is to have AI do medical procedures no human can, with accuracy <i><b>to save lives!</b></i>  Because of this, <b><i>If you can't afford this video series, just buy the first one. If you can't afford the others, make sure to contact me via email and I will make sure you get it at a price you can afford.  We all have to work together, and I want to help. But have to pay the bills 😄😄</i></b></div>
     </div>
 </template>
-
-<script lang="ts" setup>
-
-</script>
+<style lang="scss">
+.home {
+    .buy-button {
+        padding: 10px;
+        border-radius: 5px;
+        background: radial-gradient(#76270e, #006504);
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
+</style>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style>
+    html { margin: 0; padding: 0; }
+    body { min-height: 100vh; margin: 0; background-image:url('/background.avif'); background-position: center center; background-size: cover; display: flex; justify-content: center; }
+    .page-content { padding: 20px; margin: 50px; color: white; background: rgba(0,0,0,.8); box-shadow: 0 0 10px rgba(0,0,0,0.7); border-radius: 1px; }
+    * { box-sizing: border-box; font-family: "Inconsolata", monospace; font-optical-sizing: auto; font-weight: 400; font-style: normal; font-variation-settings: "wdth" 100; }
+    a, a:hover, a:visited { color: #fff; }
+    </style>
+    <style>
+        .login-form, .portal-link, .checkout-link { display: none; }
+        .button { background-color: #6772e5; color: #fff; padding: 5px 8px; border-radius: 2px; text-decoration: none; border: none; }
+        .button:active, .button:visited { color: #fff; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .video-container { display: flex; justify-content: center; }
+    </style>
+    <div class="page-content">
+        <div class="header">
+            <h2 style="margin:0;line-height:1">AI Coding Central</h2>
+            <div class="login-form">
+                <input type="email" placeholder="email" id="login-email" onkeydown="if (event.key === 'Enter') { login() }" />
+                <button onclick="login()" class="button" style="padding: 3px 5px">Login</button>
+            </div>
+            <div class="portal-link">
+                <a class="button" href="/portal.html">Enter Portal</a>
+            </div>
+            <script>
+                function login() {
+                    let loginEmail = document.getElementById("login-email").value;
+                    if (loginEmail.match(/.+@.+\..+/)) {
+                        localStorage.setItem("email", loginEmail);
+                        window.location.href = "/portal.html";
+                    } else {
+                        document.getElementById("login-email").style.border = "1px solid red";
+                    }
+                }
+            </script>
+        </div>
+        <div>
+            <div>
+            These videos are available for free if you can't afford them.  It costs money to advertise these videos, so we request you donate at least $1 to help cover these costs. If you still can't afford it, click the button below to access the videos.  Please don't share the link, as we need to recoup costs.  We love you and want to help you, but we need help to.  Enjoy!
+            </div>
+            <br>
+            <br>
+            <a class="" href="/portal.html">Start</a>
+        </div>
+    </div>
+</body>

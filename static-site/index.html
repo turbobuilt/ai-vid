@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style>
+    html { margin: 0; padding: 0; }
+    body { min-height: 100vh; margin: 0; background-image:url('/background.avif'); background-position: center center; background-size: cover; display: flex; justify-content: center; }
+    .page-content { padding: 20px; margin: 50px; color: white; background: rgba(0,0,0,.8); box-shadow: 0 0 10px rgba(0,0,0,0.7); border-radius: 1px; }
+    * { box-sizing: border-box; font-family: "Inconsolata", monospace; font-optical-sizing: auto; font-weight: 400; font-style: normal; font-variation-settings: "wdth" 100; }
+    a, a:hover, a:visited { color: #fff; }
+    </style>
+    <style>
+        .login-form, .portal-link, .checkout-link { display: none; }
+        .button { background-color: #6772e5; color: #fff; padding: 5px 8px; border-radius: 2px; text-decoration: none; border: none; }
+        .button:active, .button:visited { color: #fff; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .video-container { display: flex; justify-content: center; }
+    </style>
+    <div class="page-content">
+        <div class="header">
+            <h2 style="margin:0;line-height:1">AI Coding Central</h2>
+            <div class="login-form">
+                <input type="email" placeholder="email" id="login-email" onkeydown="if (event.key === 'Enter') { login() }" />
+                <button onclick="login()" class="button" style="padding: 3px 5px">Login</button>
+            </div>
+            <div class="portal-link">
+                <a class="button" href="/portal.html">Enter Portal</a>
+            </div>
+            <script>
+                function login() {
+                    let loginEmail = document.getElementById("login-email").value;
+                    if (loginEmail.match(/.+@.+\..+/)) {
+                        localStorage.setItem("email", loginEmail);
+                        window.location.href = "/portal.html";
+                    } else {
+                        document.getElementById("login-email").style.border = "1px solid red";
+                    }
+                }
+            </script>
+        </div>
+        <div class="video-container" style="margin-top: 40px;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/3VjQP1dxNS8?si=3r5JfAEuOcBkPTkT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <!-- <div class="video-frame-container" style="width: 100%; max-width: 600px; height: 0; padding: 24% 0; position: relative;" >
+                <iframe style="position: absolute; top: 0; bottom: 0; left: 0; right: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/3VjQP1dxNS8?si=3r5JfAEuOcBkPTkT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div> -->
+        </div>
+        <div class="middle-buttons" style="display: flex; align-items: center; justify-content: center; padding: 20px 0 10px; font-weight: bold; font-size: 20px;">
+            <a class="checkout-link" href="https://buy.stripe.com/test_9AQaHi5RRfYR2FG3cd">Invest Now</a>
+            <a class="button portal-link" href="/portal.html">Enter Portal</a>
+        </div>
+        <h1>Welcome to AI Coding Central, the home for your tutorials for AI without any trouble</h1>
+        <h2>Please enjoy the process of building AI without any calculus, linear algebra, or anything beyond simple mathematics.</h2>
+        <h3>If you can do addition, subtraction, multiplication, and division, you have everything you need for success.</h3>
+        <p>Remember "Calculus", "Linear Algebra", and the like are just a bunch of simple math with cool abstractions.  It's the symbols that kill ya!</p>
+        <p>Enjoy learning math!</p>
+        <div style="text-align: center; color: white;">
+            <a style="cursor: pointer;" onclick="document.querySelector('#cant-afford-container').style.display='block';" >I can't afford it</a>
+            <div style="display:none;" id="cant-afford-container">
+                <br>
+                <div>
+                    If you can't afford to purchase the course, please at least donate as much as advertising costs (estimated to be about $1). This will help us provide free content. If you still can't afford that, <a style="cursor: pointer;" href="/free-content.html">click here</a> and you can watch them for free
+                </div>
+                <br>
+                <div>
+                    <a class="button" href="https://buy.stripe.com/test_9AQaHi5RRfYR2FG3cd">Donate One Dollar (covers advertising)</a>
+                </div>
+            </div>
+        </div>
+        <style>
+        .checkout-link { background-color: #6772e5; color: #fff; padding: 12px 24px; border-radius: 4px; text-decoration: none; }
+        .checkout-link:active, .checkout-link:visited { color: #fff; }
+        </style>
+
+        <script>
+            if (localStorage.getItem("stripeSession")) {
+                document.querySelectorAll(".portal-link").forEach(el => el.style.display = "inline-block");
+            } else {
+                document.querySelector(".login-form").style.display = "block";
+                document.querySelector(".checkout-link").style.display = "inline-block";
+            }
+        </script>
+    </div>
+</body>

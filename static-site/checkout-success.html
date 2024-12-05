@@ -1,0 +1,5 @@
+Success
+<script>
+let stripeSession = window.location.href.match(/stripe-session=(.*?)(&|\?|$)/)[1];
+localStorage.setItem("stripeSession", stripeSession);
+</script>
